@@ -1,0 +1,11 @@
+{
+    "moduleNames": {
+        "environment": "environment",
+        "middleware": "middleware",
+        "sockets": "sockets",
+        "routes": "routes"
+    },
+    "staticDir": "public",
+    "dirToIgnore": ["subapp", "another"],
+    "bundle": true
+}
