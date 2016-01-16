@@ -1,7 +1,7 @@
 var config = {
   wifiSSID: '[SSID]',
   wifiKey: '[PASSWORD]',
-  mqttHost: '[MQTT HOST IP]'
+  mqttHost: '49.212.91.66'
 };
 
 var client_id = "1111";
@@ -31,10 +31,8 @@ setInterval(function() {
     + "}";
 }, 2000);
 
-var mqtt = require("MQTT");
+var mqtt = require("MQTT").create(config.mqttHost);
 var wifi, sensor,temp;
-
-mqtt.create(config.mqttHost);
 
 mqtt.on('connected', function() {
   console.log('mqtt connected');

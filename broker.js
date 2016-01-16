@@ -94,17 +94,9 @@ module.exports = function (app) {
      */
     var url = require('url');
 
-    var mqtt_url = url.parse(process.env.CLOUDMQTT_URL || 'mqtt://localhost:1883');
-    //var auth = (mqtt_url.auth || ':').split(':');
+    //var mqtt_url = url.parse(process.env.CLOUDMQTT_URL || 'mqtt://localhost:1883');
+    var mqtt_url = url.parse('mqtt://localhost:1883');
 
-    /*
-    var broker = mqtt.createClient(mqtt_url.port, mqtt_url.hostname, {
-      username: auth[0],
-      password: auth[1]
-    });
-    */
-
-    console.log(process.env.CLOUDMQTT_URL);
     var broker = mqtt.connect(mqtt_url);
 
     broker.on('connect', function() {
